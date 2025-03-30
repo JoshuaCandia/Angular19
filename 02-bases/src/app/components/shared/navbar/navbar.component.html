@@ -11,11 +11,24 @@
     color: white;
     text-decoration: none;
   }
+  nav a.active {
+    color: #007bff;
+    text-decoration: underline;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
 </style>
 
 <nav>
-  <a routerLink="/">Counter</a>
-  <a [routerLink]="['/hero']">Hero</a>
+  <a
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Counter</a
+  >
+  <a [routerLink]="['/hero']" [routerLinkActive]="'active'">Hero</a>
+  <a [routerLink]="['/dragonball']" [routerLinkActive]="'active'">Dragonball</a>
 
   <!-- Otros -->
 </nav>

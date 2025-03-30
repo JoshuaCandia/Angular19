@@ -1,0 +1,64 @@
+<h1>Página de Dragonball</h1>
+<hr />
+<section class="row">
+  <div class="col-12 col-md-6 col-lg-8">
+    <h3>Agregar personaje:{{ name() }}</h3>
+    <form class="d-flex flex-column gap-2">
+      <div class="d-flex gap-2">
+        <input
+          id="name"
+          [value]="name()"
+          (input)="name.set(txtName.value)"
+          #txtName
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="Nombre"
+        />
+
+        <input
+          [value]="power()"
+          #txtPower
+          (input)="power.set(+txtPower.value)"
+          type="number"
+          name="power"
+          id="power"
+          class="form-control"
+          placeholder="Poder"
+        />
+      </div>
+      <button (click)="addCharacter()" type="button" class="btn btn-primary">
+        Agregar
+      </button>
+    </form>
+  </div>
+
+  <div class="row col-12 col-md-6 col-lg-4">
+    <h3>Listado de personajes</h3>
+    <ul class="list-group">
+      @if (characters().length === 0) {
+      <li class="list-group-item">
+        <strong>Aqui no hay ningun personaje</strong>
+      </li>
+      } @else { @for (character of characters(); track character.id; let idx =
+      $index) { @if (character.power > 2000) {
+      <li class="list-group-item">
+        <strong>{{ idx + 1 }} - {{ character.name }}</strong>
+        <span
+          [class.text-danger]="character.power > 9000"
+          [class.text-primary]="character.power <= 9000"
+        >
+          {{ character.power }}
+        </span>
+      </li>
+      }@else {
+      <li class="list-group-item">
+        <strong
+          >Solo se muestran los personajes con mas de
+          <span class="text-primary">2000</span> de poder</strong
+        >
+      </li>
+      } } }
+    </ul>
+  </div>
+</section>
