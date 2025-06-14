@@ -1,0 +1,19 @@
+<td>Héroe:</td>
+<dd>{{ name() }}</dd>
+<td>Edad:</td>
+<dd>{{ age() }}</dd>
+<td>Método:</td>
+<dd>{{ heroDescription() }}</dd>
+<td>Uppercase</td>
+<!-- <dd>{{ capitalizeName() }}</dd> -->
+<dd>{{ name() | uppercase }}</dd>
+
+<button class="btn btn-primary mx-2" (click)="changeHero()">
+  Cambiar Héroe
+</button>
+<button class="btn btn-primary mx-2" (click)="resetForm()">
+  Reiniciar Héroe
+</button>
+<button class="btn btn-primary mx-2" (click)="changeAge()">
+  Cambia la edad a 60
+</button>
