@@ -2,13 +2,22 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'counter',
+    path: '',
     loadComponent: () =>
-      import('./counter/counter.component.js').then((m) => m.CounterComponent),
+      import('./pages/counter/counter.component.js').then(
+        (m) => m.CounterComponent
+      ),
   },
   {
     path: 'hero',
     loadComponent: () =>
-      import('./hero/hero-page.component').then((m) => m.HeroPageComponent),
+      import('./pages/hero/hero-page.component.js').then(
+        (m) => m.HeroPageComponent
+      ),
+  },
+
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
