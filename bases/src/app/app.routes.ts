@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { HeroPageComponent } from './pages/hero/hero-page.component.js';
+import { DragonballComponent } from './pages/dragonball/dragonball.component.js';
 
 export const routes: Routes = [
   {
@@ -10,10 +12,11 @@ export const routes: Routes = [
   },
   {
     path: 'hero',
-    loadComponent: () =>
-      import('./pages/hero/hero-page.component.js').then(
-        (m) => m.HeroPageComponent
-      ),
+    component: HeroPageComponent,
+  },
+  {
+    path: 'dragonball',
+    component: DragonballComponent,
   },
 
   {
