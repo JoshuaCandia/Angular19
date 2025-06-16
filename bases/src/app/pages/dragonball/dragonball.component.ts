@@ -3,7 +3,7 @@ import { Component, signal } from '@angular/core';
 interface DragonballCharacter {
   id: number;
   name: string;
-  power?: number;
+  power: number;
   description: string;
 }
 
@@ -44,6 +44,13 @@ export class DragonballComponent {
     },
     {
       id: 5,
+      name: 'Yamcha',
+      power: 500,
+      description:
+        'A former bandit and one of Goku’s earliest friends, known for his martial arts skills.',
+    },
+    {
+      id: 6,
       name: 'Freezer',
       power: 10000,
       description:
