@@ -5,8 +5,8 @@ import { DragonballCharacter } from '../../types/characters.types';
 @Component({
   selector: 'app-dragonball',
   imports: [],
-  templateUrl: './dragonball.component.html',
-  styleUrl: './dragonball.component.css',
+  templateUrl: './dragonball-super-page.component.html',
+  styleUrl: './dragonball-super-page.component.css',
 })
 export class DragonballComponent {
   characters = signal(dragonballCharacters);
